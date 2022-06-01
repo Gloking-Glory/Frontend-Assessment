@@ -1,0 +1,80 @@
+<div class="bg-warning w-100 rounded">
+    <h3 class="text-center text-light p-3">DOCTORS LIST</h3>
+</div>
+<div *ngFor="let doctor of doctorsList; index as i">
+    <div class="card mt-3">
+        <h4 class="card-header text-center text-uppercase"> {{ doctor.name }} </h4>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4">
+                    <mat-list>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>person</mat-icon>
+                            <p matLine>USERNAME</p>
+                            <h5 matLine>{{ doctor.username }}</h5>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+
+                <div class="col-lg-4">
+                    <mat-list>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>phone</mat-icon>
+                            <p matLine>PHONE NUMBER</p>
+                            <h5 matLine>{{ doctor.phone }}</h5>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+
+                <div class="col-lg-4">
+                    <mat-list>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>email</mat-icon>
+                            <p matLine>EMAIL</p>
+                            <h5 matLine>{{ doctor.email }}</h5>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+            
+                <div class="col-lg-4 mt-2">
+                    <mat-list>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>website</mat-icon>
+                            <p matLine>WEBSITE</p>
+                            <h5 matLine>{{ doctor.website }}</h5>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+
+                <div class="col-lg-4 mt-2">
+                    <mat-list>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>group</mat-icon>
+                            <p matLine>COMPANY</p>
+                            <h5 matLine>{{ doctor.company.name }}</h5>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+
+                <div class="col-lg-4 mt-2">
+                    <mat-list>
+                        <mat-list-item>
+                            <mat-icon mat-list-icon>house</mat-icon>
+                            <p matLine>ADDRESS</p>
+                            <h5 matLine> {{ doctor.address.city }} </h5>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="mx-auto">
+                <button type="button" color="accent" mat-raised-button (click)="delete(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

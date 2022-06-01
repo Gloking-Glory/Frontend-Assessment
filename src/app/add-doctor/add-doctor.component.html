@@ -1,0 +1,124 @@
+<div class="">
+    <div class="">
+        <div class="bg-light rounded shadow">
+            <div class="form-group">
+                <form [formGroup]="formDetails" (ngSubmit)="regDoctor()">
+                    <div class="p-3">
+                        <h2 class="text-center">ADD NEW DETAILS</h2>
+                        
+                        <div *ngIf="submitError" class="alert alert-danger text-center">
+                            Complete form registration to continue
+                        </div>
+
+                        <p>Full Name</p>
+                        <input type="text" placeholder="Ex: Jude Bret" formControlName="name" class="form-control">
+
+                        <div class="row mt-3">
+                            <div class="col-lg-6">
+                                <p>Email</p>
+                                <input 
+                                    type="email" 
+                                    placeholder="Ex: abc@mail.com" 
+                                    formControlName="email" 
+                                    class="form-control"
+                                >
+                                <small 
+                                    class="text-danger"
+                                    *ngIf="form['email'].touched && form['email'].errors?.['required']"
+                                >
+                                    Email is required
+                                </small>
+                                <small 
+                                    class="text-danger"
+                                    *ngIf="form['email'].touched && form['email'].errors?.['email']"
+                                >
+                                    Enter a valid email address
+                                </small>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <p>Username</p>
+                                <input type="text" placeholder="Ex: Bret" formControlName="username" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-lg-6">
+                                <p>Phone Number</p>
+                                <input type="number" placeholder="Ex: 1-770-736-8031" formControlName="phone" class="form-control">
+                                <small
+                                    class="text-danger"
+                                    *ngIf="form['phone'].touched && form['phone'].errors?.['maxlength'] || form['phone'].errors?.['minlength']"
+                                >
+                                    Enter a valid phone number
+                                </small>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>Website</p>
+                                <input 
+                                    type="url" 
+                                    placeholder="Ex: doctor.org" 
+                                    formControlName="website" 
+                                    class="form-control"
+                                >
+                                <small 
+                                    class="text-danger"
+                                    *ngIf="form['website'].touched && form['website'].errors?.['required']"
+                                >
+                                    Website is required
+                                </small>
+                                <small 
+                                    class="text-danger"
+                                    *ngIf="form['website'].touched && form['website'].errors?.['pattern']"
+                                >
+                                    Enter a valid website url
+                                </small>
+                            </div>
+                        </div>
+                        
+                        <p class="mt-3">Address</p>
+                        <input type="text" placeholder="Ex: Apt. 556" formControlName="suite" class="form-control">
+
+                        <div class="row mt-3">
+                            <div class="col-lg-4">
+                                <p>Street</p>
+                                <input type="text" placeholder="Ex: Allen Avenue" formControlName="street" class="form-control">
+                            </div>
+                            <div class="col-lg-4">
+                                <p>City</p>
+                                <input type="text" placeholder="Ex: Lagos"  formControlName="city" class="form-control">
+                            </div>
+                            <div class="col-lg-4">
+                                <p>Zip Code</p>
+                                <input type="text" placeholder="Ex: 90566" formControlName="zipcode" class="form-control">
+                            </div>
+                        </div>
+
+                        <p class="mt-3">Company</p>
+                        <input type="text" placeholder="Ex: Facebook" formControlName="companyName" class="form-control">
+
+                        <div class="row mt-3">
+                            <div class="col-lg-6">
+                                <p>Catch Phrase</p>
+                                <input type="text" placeholder="Ex: It's quick and easy" formControlName="catchPhrase" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <p>Business Strategy</p>
+                                <input type="text" placeholder="Ex: Social Media" formControlName="bs" class="form-control">
+                            </div>
+                        </div>
+
+                        <button 
+                            type="submit" 
+                            mat-raised-button 
+                            color="accent" 
+                            class="w-100 mt-3"
+                        >
+                            REGISTER
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

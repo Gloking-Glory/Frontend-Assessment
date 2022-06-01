@@ -1,0 +1,23 @@
+<div class="homeContainer">
+
+  <app-search-doctor [doctorsList]="doctorsList"></app-search-doctor>
+
+  <div class="row mat-typography p-3">
+  
+    <div class="col-lg-6">
+      <app-add-doctor 
+        [doctorsList]="doctorsList"
+        (addDoctor)="addDoctor($any($event))"
+      >
+      </app-add-doctor>
+    </div>
+  
+    <div class="col-lg-6">
+      <app-doctors-list 
+        [doctorsList]="doctorsList" 
+        (deleteDoctor)="deleteDoctor($any($event))"
+      >
+      </app-doctors-list>
+    </div>
+  </div>
+</div>
