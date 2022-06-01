@@ -6,5 +6,54 @@
                 <mat-icon class="mt-2 mx-2" (click)="searchDoctor()">search</mat-icon>
             </div>
         </div>
+        <div class="card mt-3" *ngIf="searchOn">
+            <div class="card-header text-center text-uppercase"> {{ searchResult.name }} </div>
+            <div class="card-body">
+                <mat-list>
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>person</mat-icon>
+                        <p matLine>Username</p>
+                        <h5 matLine>{{ searchResult.username }}</h5>
+                    </mat-list-item>
+                    
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>email</mat-icon>
+                        <p matLine>Email</p>
+                        <h5 matLine>{{ searchResult.email }}</h5>
+                    </mat-list-item>
+                    
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>phone</mat-icon>
+                        <p matLine>Phone Number</p>
+                        <h5 matLine>{{ searchResult.phone }}</h5>
+                    </mat-list-item>
+                    
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>website</mat-icon>
+                        <p matLine>Website</p>
+                        <h5 matLine>{{ searchResult.website }}</h5>
+                    </mat-list-item>
+                    
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>group</mat-icon>
+                        <p matLine>Company</p>
+                        <h5 matLine>{{ searchResult.company.name }}</h5>
+                    </mat-list-item>
+                    
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>house</mat-icon>
+                        <p matLine>Address</p>
+                        <h5 matLine>{{ searchResult.address.city }}</h5>
+                    </mat-list-item>
+
+                    <mat-list-item>
+                        <mat-icon mat-list-icon>email</mat-icon>
+                        <p matLine>Email</p>
+                        <h5 matLine>{{ searchResult.email }}</h5>
+                    </mat-list-item>
+                </mat-list>
+                
+            </div>
+        </div>
     </div>
 </div>

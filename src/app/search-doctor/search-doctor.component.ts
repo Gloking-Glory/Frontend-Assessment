@@ -10,6 +10,7 @@ import { DocListInterface } from '../types/interface';
 export class SearchDoctorComponent implements OnInit {
   @Input() doctorsList!: DocListInterface[];
 
+  public searchOn: boolean = false;
   public searchResult: DocListInterface = {
     address: {
       city: "",
@@ -41,7 +42,15 @@ export class SearchDoctorComponent implements OnInit {
   }
 
   searchDoctor() {
-    this.searchResult = this.doctorsList.find()
+    let { searchName } = this;
+    console.log(searchName);
+    let result = this.doctorsList.find((details: any)=> details.name == searchName || details.username == searchName);
+    if (!result) {
+      alert("User not found");
+      return;
+    }
+    this.searchOn = true;
+    this.searchResult = result;
   }
 
 }
