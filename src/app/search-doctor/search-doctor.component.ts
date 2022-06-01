@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ServiceService } from '../services/service.service';
 import { DocListInterface } from '../types/interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-search-doctor',
@@ -43,14 +43,20 @@ export class SearchDoctorComponent implements OnInit {
 
   searchDoctor() {
     let { searchName } = this;
-    console.log(searchName);
     let result = this.doctorsList.find((details: any)=> details.name == searchName || details.username == searchName);
     if (!result) {
-      alert("User not found");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'User not found!',
+      });
+      this.searchName = "";
+      this.searchOn = false;
       return;
     }
     this.searchOn = true;
     this.searchResult = result;
+    this.searchName = "";
   }
 
 }

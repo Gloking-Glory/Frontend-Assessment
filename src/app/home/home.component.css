@@ -2,10 +2,3 @@
     background-color: lightcoral;
     width: 100%;
 }
-mat-grid-tile {
-    /* background-color: aquamarine; */
-    height: 50px;
-}
-mat-list-item h5 {
-    font-weight: bold !important;
-}

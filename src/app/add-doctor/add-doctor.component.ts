@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ServiceService } from '../services/service.service';
-import { DocListInterface, NewDocInterface } from '../types/interface';
+import { DocListInterface } from '../types/interface';
 
 @Component({
   selector: 'app-add-doctor',
@@ -15,7 +14,7 @@ export class AddDoctorComponent implements OnInit {
   public formDetails!: FormGroup;
   public submitError: boolean = false;
 
-  constructor(private fb: FormBuilder, private appService: ServiceService) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.formDetails = this.fb.group({
